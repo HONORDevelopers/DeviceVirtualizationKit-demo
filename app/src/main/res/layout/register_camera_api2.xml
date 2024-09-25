@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.hihonor.dvkitdemo.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grid_divide_line"
+        android:layout_below="@id/texture"/>
+
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/texture"
+        android:background="@color/grey_background"
+        android:gravity="center"
+        android:text="帧率:"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/fps"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/texture"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/grey_background"
+        android:overlapAnchor="false" >
+        </Spinner>
+
+    <ImageButton
+        android:id="@+id/capture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/texture"
+        android:background="@drawable/bg_go">
+    </ImageButton>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="352dp"
+        android:layout_margin="10dp"
+        android:layout_below="@id/texture">
+        <ImageView
+            android:id="@+id/image_c"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_background">
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="拍照结果显示区域"
+            android:textSize="18sp"
+            />
+    </FrameLayout>
+</RelativeLayout>

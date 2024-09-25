@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+project.ext.set("sdkDir", System.getenv("ANDROID_HOME"))
+project.ext.set("ndkDir", System.getenv("ANDROID_NDK_HOME"))
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        // 配置SDK的Maven仓地址。
+        maven {url 'https://developer.hihonor.com/repo'}
+
+    }
+    dependencies {
+        // 增加asplugin插件配置，推荐您使用最新版本。
+        classpath 'com.hihonor.mcs:asplugin:2.0.0'
+        // 增加gradle插件配置，根据gradle版本选择对应的插件版本号
+        classpath 'com.android.tools.build:gradle:4.1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        // 配置SDK的Maven仓地址。
+        maven {url 'https://developer.hihonor.com/repo'}
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
